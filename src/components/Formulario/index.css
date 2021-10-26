@@ -1,0 +1,28 @@
+.form-card {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.form-card input,
+.form-card textarea {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.form-card-title {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.btn {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.btn > * {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.btn:before {
+  /*Adicione aqui o estilo desta classe*/
+}
+
+.btn:active:before {
+  /*Adicione aqui o estilo desta classe*/
+}
