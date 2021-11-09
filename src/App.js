@@ -1,7 +1,9 @@
+import { BrowserRouter, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Note from "./components/Note";
-import Formulario from "./components/Formulario";
+import Appbar from "./components/Appbar";
+import PaginaPrincipal from "./components/PaginaPrincipal";
+import Editar from "./components/Editar";
 import "./App.css";
 
 function App() {
@@ -19,20 +21,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className="appbar">
-        <img src="/logo-getit.png" className="logo" />
-        <span className="subtitle">Como o Post-it, mas com outro verbo</span>
+      <Appbar />
+      <div>
+        <BrowserRouter>
+          <Route path="/" exact>
+            <PaginaPrincipal notesList={notes} loadData={loadData}/>
+          </Route>
+          <Route path="/edit/:note_id">
+            <Editar
+              reloadData={loadData}
+            />
+          </Route>
+        </BrowserRouter>
       </div>
-      <main className="container">
-        <Formulario onSubmitFormulario={loadData}/>
-        <div className="card-container">
-          {notes.map((note) => (
-            <Note key={`note__${note.id}`} title={note.title}>
-              {note.content}
-            </Note>
-          ))}
-        </div>
-      </main>
     </div>
   );
 }
